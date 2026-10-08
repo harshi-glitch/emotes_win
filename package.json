@@ -1,0 +1,26 @@
+{
+  "name": "hk",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Emo — on-device emoji suggestions as a browser extension (WebAssembly, no server)",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "model": "node scripts/fetch-model.mjs",
+    "typecheck": "tsc --noEmit",
+    "cli": "node src/cli.ts",
+    "e2e": "node scripts/e2e.mjs",
+    "demo": "node scripts/demo.mjs",
+    "package": "node scripts/package.mjs"
+  },
+  "dependencies": {
+    "@desert-ant-labs/emo": "^3.1.0",
+    "@litertjs/core": "^2.5.3"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.3.0",
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0",
+    "vite": "^8.3.0"
+  }
+}

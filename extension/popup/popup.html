@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Emo</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        Emo
+        <span class="tagline">emoji suggestions, on-device</span>
+      </div>
+      <button id="options" class="ghost" title="Settings">⚙</button>
+    </header>
+
+    <main>
+      <label class="field">
+        <span>Try it</span>
+        <input id="text" type="text" placeholder="Pay my bills" autocomplete="off" />
+      </label>
+
+      <div id="results" class="results" aria-live="polite">
+        <p class="hint">Type a phrase above, or just start typing in any field on the page.</p>
+      </div>
+
+      <div class="perf">
+        <span id="timing"></span>
+        <button id="copy" class="ghost" hidden>Copy last</button>
+      </div>
+    </main>
+
+    <footer>
+      <div class="model">
+        <span id="state" class="dot"></span>
+        <span id="modelText">model idle</span>
+      </div>
+      <button id="toggleModel" class="ghost">Load model</button>
+    </footer>
+
+    <p class="credit">Model: <a href="https://license.desertant.com/attribution" target="_blank" rel="noreferrer">Desert Ant Labs · Emo</a></p>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

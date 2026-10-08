@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Emo settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <h1>Emo settings</h1>
+
+    <section>
+      <h2>Behaviour</h2>
+      <label class="row">
+        <span>Suggest emoji while I type</span>
+        <input id="enabled" type="checkbox" />
+      </label>
+      <label class="row">
+        <span>Show the floating chips in the page</span>
+        <input id="liveChips" type="checkbox" />
+      </label>
+      <label class="row">
+        <span>Skin tone</span>
+        <select id="skinTone"></select>
+      </label>
+      <label class="row">
+        <span>Max suggestions</span>
+        <input id="limit" type="number" min="1" max="12" step="1" />
+      </label>
+      <label class="row">
+        <span>Start after this many characters</span>
+        <input id="minChars" type="number" min="1" max="40" step="1" />
+      </label>
+      <label class="row">
+        <span>Pause typing this many ms before asking</span>
+        <input id="debounceMs" type="number" min="60" max="2000" step="20" />
+      </label>
+      <label class="row">
+        <span>Stay quiet this long after I dismiss</span>
+        <select id="cooldownMs">
+          <option value="5000">5s</option>
+          <option value="20000">20s</option>
+          <option value="60000">1min</option>
+          <option value="600000">10min</option>
+        </select>
+      </label>
+    </section>
+
+    <section>
+      <h2>Model</h2>
+      <div class="status">
+        <span id="dot" class="dot"></span>
+        <span id="modelText">checking…</span>
+      </div>
+      <div class="buttons">
+        <button id="load" class="primary">Load now</button>
+        <button id="unload">Unload</button>
+      </div>
+      <label class="row">
+        <span>Unload after idle</span>
+        <select id="idleUnloadMinutes">
+          <option value="1">1 minute</option>
+          <option value="5">5 minutes</option>
+          <option value="15">15 minutes</option>
+          <option value="60">1 hour</option>
+        </select>
+      </label>
+      <p class="note">
+        The model ships inside the extension (~10 MB) and never downloads at runtime. Every suggestion is computed on
+        this machine.
+      </p>
+    </section>
+
+    <section>
+      <h2>Sites Emo stays off</h2>
+      <p class="note">One hostname per line, e.g. <code>internal.example.com</code>. Subdomains are covered too.</p>
+      <textarea id="blockedHosts" rows="4" spellcheck="false" placeholder="mail.company.com"></textarea>
+    </section>
+
+    <section>
+      <h2>Keyboard</h2>
+      <p class="note"><kbd>Esc</kbd> dismisses the chips and starts the cooldown. <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd> asks again for the focused field. (Plain <kbd>Alt</kbd>+<kbd>E</kbd> is Chrome's own menu key.)</p>
+    </section>
+
+    <p id="saved" class="saved">Saved</p>
+    <p class="credit">
+      Emoji model and tokenizer by <a href="https://license.desertant.com/attribution" target="_blank" rel="noreferrer">Desert Ant Labs</a>,
+      under their <a href="https://license.desertant.com/1.0" target="_blank" rel="noreferrer">source-available license</a>.
+    </p>
+
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+# Dependencies and the browser this project downloads to test against
+node_modules/
+chrome/
+
+# Build output: `npm run build` reproduces all of it, including the model files
+extension/dist/
+
+# Packaging and verification artifacts
+release/
+.package-check/
+.demo-profile/
+
+# Editor state
+.kilo/
+*.swp
+
+# OS and log noise
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+*.tsbuildinfo
